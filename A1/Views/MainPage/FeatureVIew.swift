@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct MainView: View {
-    @State var theme: Theme = Theme(isLightTheme: true)
+struct FeatureView: View {
+    @Binding var theme: Theme
     @State var recRestaurants: [Restaurant] = Restaurant.recRestaurants
     @State var bibRestaurants: [Restaurant] = Restaurant.bibRestaurants
     @State var oneStartRestaurants: [Restaurant] = Restaurant.oneStarRestaurants
+//    @EnvironmentObject var restaurants: RestaurantViewModel
     var body: some View {
         NavigationStack{
             ZStack{
@@ -27,13 +28,15 @@ struct MainView: View {
             }
         }
     }
+    
+   
    
 }
 
 
-struct MainView_Previews: PreviewProvider {
+struct Feature_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(theme: Theme(isLightTheme: true))
+        FeatureView(theme: .constant(Theme(isLightTheme: true)))
             .environmentObject(LocationViewModel())
     }
 }
