@@ -10,15 +10,10 @@ import SwiftUI
 struct FeatureView: View {
     @Binding var restaurants: [Restaurant]
     @Binding var theme: Theme
-    
-//    @State var recRestaurants: [Restaurant] = Restaurant.recRestaurants
-//    @State var bibRestaurants: [Restaurant] = Restaurant.bibRestaurants
-//    @State var oneStartRestaurants: [Restaurant] = Restaurant.oneStarRestaurants
-//    @EnvironmentObject var restaurants: RestaurantViewModel
     var body: some View {
         NavigationStack{
             ZStack{
-                theme.mainColor
+                theme.primaryColor
                     .edgesIgnoringSafeArea(.all)
                 ScrollView{
                     VStack{

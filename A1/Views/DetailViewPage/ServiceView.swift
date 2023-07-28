@@ -33,7 +33,7 @@ struct ServiceView: View {
         .bold()
         .lineSpacing(5)
         .padding(.all)
-        .background(theme.mainColor)
+        .background(theme.secondaryColor)
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .padding(.all)
     }

@@ -13,7 +13,7 @@ struct DetailView: View {
     @EnvironmentObject var vm: LocationViewModel
     var body: some View {
         ZStack{
-            Color.white
+            theme.primaryColor
                 .edgesIgnoringSafeArea(.all)
             ScrollView{
                 VStack{

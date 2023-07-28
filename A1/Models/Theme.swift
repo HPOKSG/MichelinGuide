@@ -46,9 +46,14 @@ import SwiftUI
 struct Theme {
     var isLightTheme: Bool
     var accentColor: Color {
-        return isLightTheme ? Color.black : Color.white;
+        return isLightTheme ? Color.black : .white
     }
-    var mainColor: Color{
-        return isLightTheme ? Color("background") :Color.black
+    var primaryColor: Color{
+        return isLightTheme ? Color("background") :.black
     }
+    
+    var secondaryColor: Color{
+        return isLightTheme ? Color(.white) : Color("secondary-dark");
+    }
+    
 }

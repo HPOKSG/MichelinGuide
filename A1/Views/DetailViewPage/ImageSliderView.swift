@@ -25,7 +25,7 @@ struct ImageSliderView: View {
                                 .foregroundColor(theme.accentColor)
                                 .font(.system(size:14))
                                 .frame(width: 45,height:20 )
-                                .background(theme.mainColor)
+                                .background(theme.primaryColor)
                                 .clipShape(Capsule())
                                 .frame(width: 375,height: 300,alignment: .bottomTrailing)
                                 .padding([.trailing,.bottom])

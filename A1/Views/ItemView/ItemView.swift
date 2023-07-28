@@ -19,14 +19,14 @@ struct ItemView: View {
                 .clipShape(CornerRadiusShape(radius: 10,corners: [.topLeft,.topRight]))
             
             ZStack {
-                Color.white
+                theme.secondaryColor
                     .frame(width: 325,height: 124)
-                .clipShape(CornerRadiusShape(radius: 10,corners:[.bottomLeft,.bottomRight]))
+                    .clipShape(CornerRadiusShape(radius: 10,corners:[.bottomLeft,.bottomRight]))
                 VStack (spacing: 0){
                     HStack {
                       
                         Text(restaurant.name.uppercased())
-                            .foregroundColor(.black)
+                            .foregroundColor(theme.accentColor)
                             .padding(.leading)
                         .bold()
                         
@@ -40,22 +40,23 @@ struct ItemView: View {
                     }
                     .frame(width:325)
                     Text(restaurant.quickReview)
-                        .foregroundColor(.black)
+                        .foregroundColor(theme.accentColor)
                         .font(.caption)
                         .frame(width: 310,alignment: .leading)
                         .padding(.leading)
                     HStack{
                         Text("Price: \(restaurant.priceRange)")
-                            .foregroundColor(.black)
+                            .foregroundColor(theme.accentColor)
                             .padding(.leading)
                         Spacer()
                         Button(action: {
                             restaurant.isFavorite = restaurant.isFavorite == true ? false : true
                             
                         }) {
-                            Image(systemName: restaurant.isFavorite ? "heart.fill": "heart")
+                            Image(systemName:restaurant.isFavorite ?"heart.fill":  "heart")
                                 .padding(.trailing)
-                                .foregroundColor( restaurant.isFavorite ? Color("red") : .black)
+                                
+                                .foregroundColor( restaurant.isFavorite ? Color("red") : theme.isLightTheme ? .black : .white)
                                 .font(.title2)
                         }
                     }
@@ -70,7 +71,7 @@ struct ItemView: View {
 
 struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemView(restaurant: .constant(Restaurant.allRestaurant[1]), theme: .constant(Theme(isLightTheme: true)))
+        ItemView(restaurant: .constant(Restaurant.allRestaurant[1]), theme: .constant(Theme(isLightTheme: false)))
         
     }
 }

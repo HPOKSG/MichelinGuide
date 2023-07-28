@@ -36,7 +36,7 @@ struct OpeningHours: View {
         .foregroundColor(.black)
         .lineSpacing(5)
         .padding(.all)
-        .background(theme.mainColor)
+        .background(theme.secondaryColor)
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .padding(.all)
     }

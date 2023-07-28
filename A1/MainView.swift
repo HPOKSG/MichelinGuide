@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var restaurants : [Restaurant] = Restaurant.allRestaurant
-    @State private var theme: Theme = Theme(isLightTheme: true)
+    @State private var theme: Theme = Theme(isLightTheme: false)
     var body: some View {
         TabView {
             FeatureView(restaurants: $restaurants, theme: $theme)
