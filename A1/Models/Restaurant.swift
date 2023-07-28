@@ -22,32 +22,12 @@ struct Restaurant: Codable,Hashable, Identifiable{
     var latitude: String
     var longtitude: String
     var isFavorite: Bool
-    
-    var latitudeConverter: Double?{
-        if let temp = Double(latitude){
-            return temp
-        }
-        return nil
-    }
-    var longtitudeConverter: Double?{
-        if let temp = Double(latitude){
-            return temp
-        }
-        return nil
-    }
     var priceRange: String
     var schedule: [String]
-//    var openHour: String
-//    var closeHour: String
     var images: [String]
     var location: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longtitude)!)
-//        if let tempLat = latitudeConverter, let tempLong = longtitudeConverter{
-//            return CLLocationCoordinate2D(latitude: tempLat, longitude: tempLong)
-//        }
-//        return CLLocationCoordinate2D(latitude: 0, longitude: 0)
     }
-    
     var imageConverter: [Image]{
         images.map{Image($0)}
     }
@@ -60,9 +40,6 @@ struct Restaurant: Codable,Hashable, Identifiable{
         }
         return Image(systemName: "globe")
     }
-    
-    
-    
     var openingHour: [String: String]?{
         if schedule.count == 0{
             return nil
@@ -71,21 +48,39 @@ struct Restaurant: Codable,Hashable, Identifiable{
     }
     
     static let allRestaurant: [Restaurant] = Bundle.main.decode(file: "data.json")
-    static var recRestaurants: [Restaurant] {
-        Restaurant.allRestaurant.filter({
-            $0.distinction == "Recommend"
-        })
+    
+    enum Filter: String, CaseIterable, Encodable, Equatable{
+        case none
+        case recommend = "Recommend"
+        case bib = "Bib Gourmand"
+        case oneStart = "1 star"
+           
     }
-    static var bibRestaurants: [Restaurant] {
-        Restaurant.allRestaurant.filter({
-            $0.distinction == "Bib Gourmand"
-        })
+    
+    var type: Filter{
+        for type in Filter.allCases{
+            if type.rawValue == distinction{
+                return type
+            }
+        }
+        return .none
     }
-    static var oneStarRestaurants: [Restaurant] {
-        Restaurant.allRestaurant.filter({
-            $0.distinction == "1 star"
-        })
-    }
+    
+//    static var recRestaurants: [Restaurant] {
+//        Restaurant.allRestaurant.filter({
+//            $0.distinction == "Recommend"
+//        })
+//    }
+//    static var bibRestaurants: [Restaurant] {
+//        Restaurant.allRestaurant.filter({
+//            $0.distinction == "Bib Gourmand"
+//        })
+//    }
+//    static var oneStarRestaurants: [Restaurant] {
+//        Restaurant.allRestaurant.filter({
+//            $0.distinction == "1 star"
+//        })
+//    }
 }
 extension Bundle{
     func decode <T: Decodable>(file: String) -> T {

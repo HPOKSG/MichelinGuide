@@ -39,7 +39,7 @@ struct ContactInformation: View {
 
 struct ContactInformation_Previews: PreviewProvider {
     static var previews: some View {
-        ContactInformation(restaurant: .constant(Restaurant.oneStarRestaurants[0]),theme: .constant(Theme(isLightTheme: true)))
+        ContactInformation(restaurant: .constant(Restaurant.allRestaurant[0]),theme: .constant(Theme(isLightTheme: true)))
     }
 }
 

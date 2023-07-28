@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListView: View {
     @State var restaurantName: String = ""
-    @State var restaurants: [Restaurant] = Restaurant.allRestaurant
+    @Binding var restaurants: [Restaurant]
     @Binding var theme: Theme
     var body: some View {
         ZStack{
@@ -35,7 +35,7 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(theme: .constant(Theme(isLightTheme: true)))
+        ListView(restaurants:.constant(Restaurant.allRestaurant), theme: .constant(Theme(isLightTheme: true)))
     }
 }
 

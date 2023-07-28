@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct FeatureView: View {
+    @Binding var restaurants: [Restaurant]
     @Binding var theme: Theme
-    @State var recRestaurants: [Restaurant] = Restaurant.recRestaurants
-    @State var bibRestaurants: [Restaurant] = Restaurant.bibRestaurants
-    @State var oneStartRestaurants: [Restaurant] = Restaurant.oneStarRestaurants
+    
+//    @State var recRestaurants: [Restaurant] = Restaurant.recRestaurants
+//    @State var bibRestaurants: [Restaurant] = Restaurant.bibRestaurants
+//    @State var oneStartRestaurants: [Restaurant] = Restaurant.oneStarRestaurants
 //    @EnvironmentObject var restaurants: RestaurantViewModel
     var body: some View {
         NavigationStack{
@@ -20,9 +22,9 @@ struct FeatureView: View {
                     .edgesIgnoringSafeArea(.all)
                 ScrollView{
                     VStack{
-                        ItemRowView(title: "Recommend".uppercased(), symbol: "none", restaurants: $recRestaurants, theme: $theme)
-                        ItemRowView(title: "Bib Gourmand".uppercased(), symbol: "bib", restaurants: $bibRestaurants, theme: $theme)
-                        ItemRowView(title: "One Star Michelin".uppercased(), symbol: "star", restaurants: $oneStartRestaurants, theme: $theme)
+                        ItemRowView(title: "Recommend", symbol: "", type: .recommend, restaurants: $restaurants, theme: $theme)
+                        ItemRowView(title: "Bib Gourmand", symbol: "bib", type: .bib, restaurants: $restaurants, theme: $theme)
+                        ItemRowView(title: "1 Star Michelin", symbol: "star", type: .oneStart, restaurants: $restaurants, theme: $theme)
                     }
                 }
             }
@@ -36,7 +38,7 @@ struct FeatureView: View {
 
 struct Feature_Previews: PreviewProvider {
     static var previews: some View {
-        FeatureView(theme: .constant(Theme(isLightTheme: true)))
+        FeatureView(restaurants: .constant(Restaurant.allRestaurant), theme: .constant(Theme(isLightTheme: true)))
             .environmentObject(LocationViewModel())
     }
 }

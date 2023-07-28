@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var theme: Theme = Theme(isLightTheme: true)
+    @State private var restaurants : [Restaurant] = Restaurant.allRestaurant
+    @State private var theme: Theme = Theme(isLightTheme: true)
     var body: some View {
         TabView {
-            FeatureView(theme: $theme)
+            FeatureView(restaurants: $restaurants, theme: $theme)
                 .tabItem {
                     Label("Menu", systemImage: "list.dash")
                         .foregroundColor(.black)
             }
-            ListView(theme: $theme)
+            ListView( restaurants: $restaurants, theme: $theme)
                 .tabItem {
                     Label("Feature", systemImage: "magnifyingglass")
                         .foregroundColor(.black)
@@ -32,7 +33,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(theme: Theme(isLightTheme: true))
+        MainView()
             .environmentObject(LocationViewModel())
     }
 }

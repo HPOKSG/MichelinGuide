@@ -33,7 +33,7 @@ struct DetailView: View {
                         
                         POVView(restaurant: $restaurant, theme: $theme)
                         ServiceView(theme: $theme)
-                        if let schedule = restaurant.openingHour{
+                        if let _ = restaurant.openingHour{
                             OpeningHours(restaurant: $restaurant, theme: $theme)
                         }
                         ContactInformation(restaurant: $restaurant, theme: $theme)
@@ -53,7 +53,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(restaurant: .constant(Restaurant.oneStarRestaurants[0])
+        DetailView(restaurant: .constant(Restaurant.allRestaurant[0])
                    ,theme: .constant(Theme(isLightTheme: true)))
         .environmentObject(LocationViewModel())
         

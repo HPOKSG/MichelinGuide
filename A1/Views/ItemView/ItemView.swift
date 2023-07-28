@@ -63,18 +63,14 @@ struct ItemView: View {
                     .frame(width:325)
                     .font(.caption)
                 }
-               
             }
-                
-            
         }
-       
     }
 }
 
 struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemView(restaurant: .constant(Restaurant.oneStarRestaurants[1]), theme: .constant(Theme(isLightTheme: true)))
+        ItemView(restaurant: .constant(Restaurant.allRestaurant[1]), theme: .constant(Theme(isLightTheme: true)))
         
     }
 }

@@ -44,6 +44,6 @@ struct OpeningHours: View {
 
 struct OpeningHours_Previews: PreviewProvider {
     static var previews: some View {
-        OpeningHours(restaurant: .constant(Restaurant.oneStarRestaurants[0]),theme: .constant(Theme(isLightTheme: true)))
+        OpeningHours(restaurant: .constant(Restaurant.allRestaurant[0]),theme: .constant(Theme(isLightTheme: true)))
     }
 }

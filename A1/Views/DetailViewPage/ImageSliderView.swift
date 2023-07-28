@@ -39,6 +39,6 @@ struct ImageSliderView: View {
 
 struct ImageSliderView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageSliderView(restaurant: .constant(Restaurant.oneStarRestaurants[0]),theme: .constant(Theme(isLightTheme: true)))
+        ImageSliderView(restaurant: .constant(Restaurant.allRestaurant[0]),theme: .constant(Theme(isLightTheme: true)))
     }
 }

@@ -43,6 +43,6 @@ struct POVView: View {
 
 struct POVView_Previews: PreviewProvider {
     static var previews: some View {
-        POVView(restaurant: .constant(Restaurant.oneStarRestaurants[0]),theme: .constant(Theme(isLightTheme: true)))
+        POVView(restaurant: .constant(Restaurant.allRestaurant[0]),theme: .constant(Theme(isLightTheme: true)))
     }
 }
