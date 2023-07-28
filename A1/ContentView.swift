@@ -9,13 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List{
+//            ForEach(Restaurant.allRestaurant,id:\.id) { item in
+            Text(Restaurant.allRestaurant[0].name)
+            
         }
-        .padding()
+        
     }
 }
 
