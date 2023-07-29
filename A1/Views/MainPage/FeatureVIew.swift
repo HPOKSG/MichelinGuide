@@ -11,10 +11,10 @@ struct FeatureView: View {
     @Binding var restaurants: [Restaurant]
     @Binding var theme: Theme
     var body: some View {
-        NavigationStack{
-            ZStack{
-                theme.primaryColor
-                    .edgesIgnoringSafeArea(.all)
+        ZStack{
+            theme.primaryColor
+                .edgesIgnoringSafeArea(.all)
+            VStack {
                 ScrollView{
                     VStack{
                         ItemRowView(title: "Recommend", symbol: "", type: .recommend, restaurants: $restaurants, theme: $theme)
@@ -25,9 +25,6 @@ struct FeatureView: View {
             }
         }
     }
-    
-   
-   
 }
 
 

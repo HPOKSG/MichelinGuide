@@ -30,6 +30,7 @@ struct ServiceView: View {
             .frame(maxWidth: .infinity,alignment:.leading)
                
         }
+        .foregroundColor(theme.accentColor)
         .bold()
         .lineSpacing(5)
         .padding(.all)

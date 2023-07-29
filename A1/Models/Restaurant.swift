@@ -65,22 +65,6 @@ struct Restaurant: Codable,Hashable, Identifiable{
         }
         return .none
     }
-    
-//    static var recRestaurants: [Restaurant] {
-//        Restaurant.allRestaurant.filter({
-//            $0.distinction == "Recommend"
-//        })
-//    }
-//    static var bibRestaurants: [Restaurant] {
-//        Restaurant.allRestaurant.filter({
-//            $0.distinction == "Bib Gourmand"
-//        })
-//    }
-//    static var oneStarRestaurants: [Restaurant] {
-//        Restaurant.allRestaurant.filter({
-//            $0.distinction == "1 star"
-//        })
-//    }
 }
 extension Bundle{
     func decode <T: Decodable>(file: String) -> T {

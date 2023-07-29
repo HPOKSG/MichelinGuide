@@ -9,25 +9,35 @@ import SwiftUI
 
 struct MainView: View {
     @State private var restaurants : [Restaurant] = Restaurant.allRestaurant
-    @State private var theme: Theme = Theme(isLightTheme: false)
+    @State private var theme: Theme = Theme(isLightTheme: true)
     var body: some View {
-        TabView {
-            FeatureView(restaurants: $restaurants, theme: $theme)
-                .tabItem {
-                    Label("Menu", systemImage: "list.dash")
-                        .foregroundColor(.black)
-            }
-            ListView( restaurants: $restaurants, theme: $theme)
-                .tabItem {
-                    Label("Feature", systemImage: "magnifyingglass")
-                        .foregroundColor(.black)
-            }
-
-        }
         
-       
+        NavigationStack {
+            ZStack {
+                theme.primaryColor
+                    .edgesIgnoringSafeArea(.all)
+                VStack{
+                    withAnimation {
+                            Toggle("", isOn: $theme.isLightTheme)
+                                .toggleStyle(SwitchToggleStyle())
+                            .padding(.bottom)
+                    }
+                    TabView {
+                        FeatureView(restaurants: $restaurants, theme: $theme)
+                            .tabItem {
+                                Label("Menu", systemImage: "list.dash")
+                                    .foregroundColor(theme.accentColor)
+                        }
+                        ListView( restaurants: $restaurants, theme: $theme)
+                            .tabItem {
+                                Label("Feature", systemImage: "magnifyingglass")
+                                    .foregroundColor(theme.accentColor)
+                        }
+                    }
+                }
+            }
+        }
     }
-   
 }
 
 

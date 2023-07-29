@@ -27,6 +27,7 @@ struct ContactInformation: View {
             }
             
         }
+        .foregroundColor(theme.accentColor)
         .bold()
         .foregroundColor(.black)
         .lineSpacing(5)

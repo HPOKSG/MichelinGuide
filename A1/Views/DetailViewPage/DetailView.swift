@@ -37,6 +37,11 @@ struct DetailView: View {
                             OpeningHours(restaurant: $restaurant, theme: $theme)
                         }
                         ContactInformation(restaurant: $restaurant, theme: $theme)
+                        
+                        Text("Location") // display restaurant name
+                            .font(.title)
+                            .bold()
+                            .foregroundColor(theme.accentColor)
                         MappingView()
         
                     }
@@ -54,7 +59,7 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(restaurant: .constant(Restaurant.allRestaurant[0])
-                   ,theme: .constant(Theme(isLightTheme: true)))
+                   ,theme: .constant(Theme(isLightTheme: false)))
         .environmentObject(LocationViewModel())
         
     }

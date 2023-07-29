@@ -30,6 +30,22 @@
     "isFavorite": false,
     "schedule": [],
     "images": ["kiko0","kiko1","kiko2","kiko3"]
+    },
+    {
+    "id": 3,
+    "name": "Gia",
+    "distinction": "1 star",
+    "address": "61 Van Mieu Street, Dong Da, Hanoi, Vietnam",
+    "introduction": "Gia đình, meaning \"family\", is a reference to chef Sam Tran and partner Long Tran's longing for their homeland during their years working abroad. The restaurant decor draws inspiration from the Temple of Literature just across the road. Their 12-course set menu changes with the seasons and is informed by Vietnamese culinary heritage. Deceptively complex, the beautifully crafted dishes showcase well-judged combinations of subtle flavours, with acidity and texture playing prominent roles.",
+    "quickReview": "Vietnamese Contemporary",
+    "priceRange": "₫₫₫₫",
+    "phone": "+84896682996",
+    "websiteUrl": "https://gia-hanoi.com/",
+    "latitude": "21.0276189",
+    "longtitude": "105.8360833",
+    "isFavorite": false,
+    "schedule": ["closed","18:00-21:00","18:00-21:00","18:00-21:00","18:00-21:00","18:00-21:00","18:00-21:00"],
+    "images": ["gia0","gia1","gia2","gia3"]
     }
 ]
 

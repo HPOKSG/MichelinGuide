@@ -22,7 +22,11 @@ struct OpeningHours: View {
                     HStack{
                         Text(key)
                         Spacer()
-                        Text(schedule[key]!)
+                        VStack {
+                            ForEach(schedule[key]!.split(separator: " "),id: \.self){ time in
+                                Text(time)
+                            }
+                        }
                        
                     }
                     .padding(.horizontal)
@@ -32,6 +36,7 @@ struct OpeningHours: View {
             }
             
         }
+        .foregroundColor(theme.accentColor)
         .bold()
         .foregroundColor(.black)
         .lineSpacing(5)

@@ -32,6 +32,7 @@ struct POVView: View {
                 .padding(.top)
                
         }
+        .foregroundColor(theme.accentColor)
         .bold()
         .lineSpacing(5)
         .padding(.all)
@@ -43,6 +44,6 @@ struct POVView: View {
 
 struct POVView_Previews: PreviewProvider {
     static var previews: some View {
-        POVView(restaurant: .constant(Restaurant.allRestaurant[0]),theme: .constant(Theme(isLightTheme: true)))
+        POVView(restaurant: .constant(Restaurant.allRestaurant[0]),theme: .constant(Theme(isLightTheme: false)))
     }
 }

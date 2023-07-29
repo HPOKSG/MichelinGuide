@@ -30,7 +30,7 @@ struct FilterView: View {
                             .font(.system(size: 20))
                     }
                     .padding(.all)
-                    .foregroundColor(.black)
+//                    .foregroundColor(.black)
                     .background(isFavorite == false ? theme.secondaryColor : .gray)
                     .clipShape(Capsule())
                 }
@@ -49,7 +49,7 @@ struct FilterView: View {
                             .frame(width: 25)
                     }
                     .padding(.all)
-                    .foregroundColor(.black)
+//                    .foregroundColor(.black)
                     .background(type != .oneStart ? theme.secondaryColor : .gray)
                     .clipShape(Capsule())
                 }
@@ -69,7 +69,7 @@ struct FilterView: View {
                             .frame(width: 25)
                     }
                     .padding(.all)
-                    .foregroundColor(.black)
+//                    .foregroundColor(.black)
                     .background(type != .bib ? theme.secondaryColor : .gray)
                     .clipShape(Capsule())
                 }
@@ -83,12 +83,13 @@ struct FilterView: View {
                         Text("Recommend")
                     }
                     .padding(.all)
-                    .foregroundColor(.black)
+//                    .foregroundColor(.black)
                     .background(type != .recommend ? theme.secondaryColor : .gray)
                     .clipShape(Capsule())
                 }
             }
         }
+        .foregroundColor(theme.accentColor)
 
         
             

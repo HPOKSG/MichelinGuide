@@ -10,6 +10,11 @@
 		645BA07E2A737BB6001CCD46 /* FeatureVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA07D2A737BB6001CCD46 /* FeatureVIew.swift */; };
 		645BA0802A737D13001CCD46 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA07F2A737D13001CCD46 /* ListView.swift */; };
 		645BA0872A7381C5001CCD46 /* SearchBarViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA0862A7381C5001CCD46 /* SearchBarViewStyle.swift */; };
+		990690222A74E1C300EBD380 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990690212A74E1C300EBD380 /* Location.swift */; };
+		990690252A74E8ED00EBD380 /* MapPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990690242A74E8ED00EBD380 /* MapPinView.swift */; };
+		990690272A74F0EE00EBD380 /* ToggleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990690262A74F0EE00EBD380 /* ToggleButtonStyle.swift */; };
+		990690292A74FCA400EBD380 /* SwitchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990690282A74FCA400EBD380 /* SwitchButtonView.swift */; };
+		9906902B2A75134D00EBD380 /* FrontPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906902A2A75134D00EBD380 /* FrontPageView.swift */; };
 		995F6E9A2A72493D0039C69A /* POVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6E992A72493D0039C69A /* POVView.swift */; };
 		995F6E9C2A724A410039C69A /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6E9B2A724A410039C69A /* ServiceView.swift */; };
 		995F6E9E2A724AD60039C69A /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6E9D2A724AD60039C69A /* ContactInformation.swift */; };
@@ -55,6 +60,11 @@
 		645BA07D2A737BB6001CCD46 /* FeatureVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureVIew.swift; sourceTree = "<group>"; };
 		645BA07F2A737D13001CCD46 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		645BA0862A7381C5001CCD46 /* SearchBarViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewStyle.swift; sourceTree = "<group>"; };
+		990690212A74E1C300EBD380 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		990690242A74E8ED00EBD380 /* MapPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinView.swift; sourceTree = "<group>"; };
+		990690262A74F0EE00EBD380 /* ToggleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonStyle.swift; sourceTree = "<group>"; };
+		990690282A74FCA400EBD380 /* SwitchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButtonView.swift; sourceTree = "<group>"; };
+		9906902A2A75134D00EBD380 /* FrontPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageView.swift; sourceTree = "<group>"; };
 		995F6E992A72493D0039C69A /* POVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POVView.swift; sourceTree = "<group>"; };
 		995F6E9B2A724A410039C69A /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		995F6E9D2A724AD60039C69A /* ContactInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = "<group>"; };
@@ -126,10 +136,21 @@
 			path = ItemView;
 			sourceTree = "<group>";
 		};
+		990690232A74E8A000EBD380 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				995F6EA12A72D2F40039C69A /* MappingView.swift */,
+				990690242A74E8ED00EBD380 /* MapPinView.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
 		9926E7C22A7024E300C3EAEC /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
 				645BA07D2A737BB6001CCD46 /* FeatureVIew.swift */,
+				990690282A74FCA400EBD380 /* SwitchButtonView.swift */,
+				9906902A2A75134D00EBD380 /* FrontPageView.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -143,7 +164,7 @@
 				995F6E9B2A724A410039C69A /* ServiceView.swift */,
 				995F6E9D2A724AD60039C69A /* ContactInformation.swift */,
 				995F6E9F2A72CF480039C69A /* OpeningHours.swift */,
-				995F6EA12A72D2F40039C69A /* MappingView.swift */,
+				990690232A74E8A000EBD380 /* MapView */,
 			);
 			path = DetailViewPage;
 			sourceTree = "<group>";
@@ -211,9 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				645BA0822A738089001CCD46 /* ListViewPage */,
+				645BA0832A7380F1001CCD46 /* ItemView */,
 				9926E7C42A70254300C3EAEC /* DetailViewPage */,
 				9926E7C22A7024E300C3EAEC /* MainPage */,
-				645BA0832A7380F1001CCD46 /* ItemView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +246,8 @@
 				997B17092A6FE362004BF625 /* Theme.swift */,
 				995F6EA52A72DDFC0039C69A /* LocationViewModel.swift */,
 				645BA0862A7381C5001CCD46 /* SearchBarViewStyle.swift */,
+				990690212A74E1C300EBD380 /* Location.swift */,
+				990690262A74F0EE00EBD380 /* ToggleButtonStyle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -362,6 +385,9 @@
 			files = (
 				995F6E9E2A724AD60039C69A /* ContactInformation.swift in Sources */,
 				995F6E9C2A724A410039C69A /* ServiceView.swift in Sources */,
+				990690222A74E1C300EBD380 /* Location.swift in Sources */,
+				990690272A74F0EE00EBD380 /* ToggleButtonStyle.swift in Sources */,
+				990690252A74E8ED00EBD380 /* MapPinView.swift in Sources */,
 				99E44F3F2A6E79DC00CD0DF7 /* Restaurant.swift in Sources */,
 				645BA0802A737D13001CCD46 /* ListView.swift in Sources */,
 				645BA07E2A737BB6001CCD46 /* FeatureVIew.swift in Sources */,
@@ -377,8 +403,10 @@
 				995F6EA02A72CF480039C69A /* OpeningHours.swift in Sources */,
 				995F6E9A2A72493D0039C69A /* POVView.swift in Sources */,
 				995F6EAE2A74119D0039C69A /* FilterView.swift in Sources */,
+				990690292A74FCA400EBD380 /* SwitchButtonView.swift in Sources */,
 				995F6EA62A72DDFD0039C69A /* LocationViewModel.swift in Sources */,
 				995F6EA42A72D3F90039C69A /* ImageSliderView.swift in Sources */,
+				9906902B2A75134D00EBD380 /* FrontPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

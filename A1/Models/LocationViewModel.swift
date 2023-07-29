@@ -9,17 +9,33 @@ import UIKit
 import MapKit
 
 @MainActor
-class LocationViewModel: ObservableObject{
+class LocationViewModel: ObservableObject,Identifiable{
+    
     
     @Published var mapRegion: MKCoordinateRegion
-    let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    @Published var latitudeDelta = 0.1
+    @Published var longitudeDelta = 0.1
+    
+    var location: [Location]
     
     init() {
-        let region = MKCoordinateRegion(center: Restaurant.allRestaurant[0].location, span: span)
-        mapRegion = region
+        mapRegion = MKCoordinateRegion(center:  Restaurant.allRestaurant[0].location, span:  MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        let temp = Location(coordinate: Restaurant.allRestaurant[0].location)
+        location =  [temp]
+    }
+    
+    func zoomIn(){
+        latitudeDelta *= 0.5
+        longitudeDelta *= 0.5
+        mapRegion = MKCoordinateRegion(center:  Restaurant.allRestaurant[0].location, span: MKCoordinateSpan(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta))
     }
     
     func updateMapRegion(newRegion: CLLocationCoordinate2D){
-        mapRegion = MKCoordinateRegion(center: newRegion, span: span)
+        mapRegion = MKCoordinateRegion(center: Restaurant.allRestaurant[0].location , span:  MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        updateLocation(Location(coordinate: newRegion))
+    }
+    
+    func updateLocation(_ newLocation: Location){
+        location = [newLocation]
     }
 }
