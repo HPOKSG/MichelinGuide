@@ -27,11 +27,11 @@ class LocationViewModel: ObservableObject,Identifiable{
     func zoomIn(){
         latitudeDelta *= 0.5
         longitudeDelta *= 0.5
-        mapRegion = MKCoordinateRegion(center:  Restaurant.allRestaurant[0].location, span: MKCoordinateSpan(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta))
+        mapRegion.span = MKCoordinateSpan(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
     }
     
     func updateMapRegion(newRegion: CLLocationCoordinate2D){
-        mapRegion = MKCoordinateRegion(center: Restaurant.allRestaurant[0].location , span:  MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        mapRegion = MKCoordinateRegion(center: newRegion , span:  MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
         updateLocation(Location(coordinate: newRegion))
     }
     

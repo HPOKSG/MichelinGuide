@@ -32,11 +32,14 @@ struct ItemView: View {
                         
                        
                         Spacer()
-                        restaurant.icon
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 30)
-                            .padding(.trailing)
+                        if let image = restaurant.icon{
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30)
+                                .padding(.trailing)
+                        }
+                        
                     }
                     .frame(width:325)
                     Text(restaurant.quickReview)

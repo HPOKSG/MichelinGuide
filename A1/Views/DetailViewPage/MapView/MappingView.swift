@@ -20,15 +20,10 @@ struct MappingView: View {
                         withAnimation(.easeOut) {
                             vm.zoomIn()
                         }
-                        
                     } label: {
                         MapPinView()
                     }
-
-                    
                 }
-
-                
             })
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding(.horizontal)

@@ -1,10 +1,3 @@
-//
-//  Restaurant.swift
-//  A1
-//
-//  Created by Hữu Phước  on 24/07/2023.
-//
-
 import Foundation
 import MapKit
 import CoreLocation
@@ -32,13 +25,13 @@ struct Restaurant: Codable,Hashable, Identifiable{
         images.map{Image($0)}
     }
     
-    var icon: Image{
+    var icon: Image?{
         if distinction == "1 star"{
             return Image( "star")
-        }else if distinction == "bib gourmand"{
+        }else if distinction == "Bib Gourmand"{
             return Image("bib")
         }
-        return Image(systemName: "globe")
+        return nil
     }
     var openingHour: [String: String]?{
         if schedule.count == 0{
@@ -81,13 +74,6 @@ extension Bundle{
         }
         return loadedData
     }
-}
-
-func calMinutes(time: String) -> Int{
-    let timeList = time.split(separator: ":")
-    let hour = Int(timeList[0]) ?? 0
-    let minute = Int(timeList[1]) ?? 0
-    return hour * 60 + minute
 }
 
 

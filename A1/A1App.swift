@@ -9,13 +9,29 @@ import SwiftUI
 
 @main
 struct A1App: App {
+    @Environment (\.scenePhase) private var scenePhase
+    @State var firstLaunch = true
     @StateObject var vm : LocationViewModel = LocationViewModel()
-//    @StateObject var restaurants : RestaurantViewModel = RestaurantViewModel()
+    @StateObject var store =  RestaurantStore()
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environmentObject(vm)
-//                .environmentObject(restaurants)
+            FrontPageView(restaurants: $store.restaurants){
+                Task{
+                    do{
+                        try await store.save(restaurants: store.restaurants)
+                    }catch{
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            .task {
+                do{
+                    try await store.load()
+                }catch{
+                    fatalError(error.localizedDescription)
+                }
+            }
+            .environmentObject(vm)
         }
     }
 }

@@ -17,6 +17,7 @@ struct TextFieldStyleView: TextFieldStyle {
                 .background(theme.secondaryColor)
             HStack {
                 Image(systemName: systemImageString)
+                    .foregroundColor(theme.accentColor)
                 // Reference the TextField here
                 configuration
                     .foregroundColor(theme.accentColor)

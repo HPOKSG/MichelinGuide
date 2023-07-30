@@ -18,12 +18,20 @@ struct FeatureView: View {
                 ScrollView{
                     VStack{
                         ItemRowView(title: "Recommend", symbol: "", type: .recommend, restaurants: $restaurants, theme: $theme)
+                            .padding(.vertical)
+                        Divider()
+                            .overlay(theme.accentColor)
                         ItemRowView(title: "Bib Gourmand", symbol: "bib", type: .bib, restaurants: $restaurants, theme: $theme)
+                            .padding(.vertical)
+                        Divider()
+                            .overlay(theme.accentColor)
                         ItemRowView(title: "1 Star Michelin", symbol: "star", type: .oneStart, restaurants: $restaurants, theme: $theme)
+                            .padding(.vertical)
                     }
                 }
             }
         }
+        
     }
 }
 

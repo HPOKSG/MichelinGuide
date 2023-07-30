@@ -13,7 +13,7 @@ struct ListView: View {
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 LazyVStack (spacing: 20) {
-                    TextField("", text: $restaurantName,prompt: Text("Name of the restaurant...").foregroundColor(.white))
+                    TextField("", text: $restaurantName,prompt: Text("Name of the restaurant...").foregroundColor(theme.accentColor))
                         .textFieldStyle(TextFieldStyleView(theme:theme, systemImageString: "magnifyingglass"))
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding(.horizontal)
