@@ -1,9 +1,14 @@
-//
-//  FilterView.swift
-//  A1
-//
-//  Created by Hữu Phước  on 28/07/2023.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2023B
+  Assessment: Assignment 1
+  Author: Dinh Gia Huu Phuoc
+  ID: s3878270
+  Created  date: 25/07/2023
+  Last modified: 02/08/2023
+  Acknowledgement: COSC2659 Lecture Slides, Apple IOS Development Tutorial
+*/
 
 import SwiftUI
 
@@ -11,7 +16,6 @@ struct FilterView: View {
     @Binding var theme: Theme
     @Binding var isFavorite: Bool
     @Binding var type: Restaurant.Filter
-//    @State pressed
     var body: some View {
         VStack {
             Text("Filter Option")
