@@ -20,12 +20,10 @@ struct ContactInformation: View {
             Text("Contact Information")
                 .frame(maxWidth:.infinity,alignment: .leading)
                 .font(.system(size:20))
-            Button {
-                callNumber(phoneNumber: restaurant.phone)
-            } label: {
-                Label(restaurant.phone, systemImage: "phone")
+         
+            Label(restaurant.phone, systemImage: "phone")
                     .frame(maxWidth: .infinity,alignment:.leading)
-            }
+            
             Link(destination: URL(string:restaurant.websiteUrl)!) {
                 Label(restaurant.websiteUrl, systemImage: "globe")
                 .frame(maxWidth: .infinity,alignment:.leading)
@@ -49,11 +47,4 @@ struct ContactInformation_Previews: PreviewProvider {
     }
 }
 
-private func callNumber(phoneNumber:String) {
-  if let phoneCallURL = URL(string: "tel://\(phoneNumber)") {
-    let application:UIApplication = UIApplication.shared
-    if (application.canOpenURL(phoneCallURL)) {
-        application.open(phoneCallURL, options: [:], completionHandler: nil)
-    }
-  }
-}
+
