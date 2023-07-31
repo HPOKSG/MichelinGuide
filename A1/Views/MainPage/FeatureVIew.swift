@@ -43,6 +43,5 @@ struct FeatureView: View {
 struct Feature_Previews: PreviewProvider {
     static var previews: some View {
         FeatureView(restaurants: .constant(Restaurant.allRestaurant), theme: .constant(Theme(isLightTheme: true)))
-            .environmentObject(LocationViewModel())
     }
 }

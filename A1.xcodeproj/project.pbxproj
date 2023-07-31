@@ -17,13 +17,13 @@
 		9906902B2A75134D00EBD380 /* FrontPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906902A2A75134D00EBD380 /* FrontPageView.swift */; };
 		9906902D2A75600F00EBD380 /* AuthorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906902C2A75600F00EBD380 /* AuthorInfoView.swift */; };
 		9906902F2A75790000EBD380 /* RestaurantStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906902E2A75790000EBD380 /* RestaurantStore.swift */; };
+		992A70302A777DD400E53A46 /* WelcomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A702F2A777DD400E53A46 /* WelcomePageView.swift */; };
 		995F6E9A2A72493D0039C69A /* POVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6E992A72493D0039C69A /* POVView.swift */; };
 		995F6E9C2A724A410039C69A /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6E9B2A724A410039C69A /* ServiceView.swift */; };
 		995F6E9E2A724AD60039C69A /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6E9D2A724AD60039C69A /* ContactInformation.swift */; };
 		995F6EA02A72CF480039C69A /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6E9F2A72CF480039C69A /* OpeningHours.swift */; };
 		995F6EA22A72D2F40039C69A /* MappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6EA12A72D2F40039C69A /* MappingView.swift */; };
 		995F6EA42A72D3F90039C69A /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6EA32A72D3F90039C69A /* ImageSliderView.swift */; };
-		995F6EA62A72DDFD0039C69A /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6EA52A72DDFC0039C69A /* LocationViewModel.swift */; };
 		995F6EAC2A7407870039C69A /* NavigationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6EAB2A7407870039C69A /* NavigationItemView.swift */; };
 		995F6EAE2A74119D0039C69A /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F6EAD2A74119D0039C69A /* FilterView.swift */; };
 		997B170A2A6FE362004BF625 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997B17092A6FE362004BF625 /* Theme.swift */; };
@@ -69,13 +69,13 @@
 		9906902A2A75134D00EBD380 /* FrontPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageView.swift; sourceTree = "<group>"; };
 		9906902C2A75600F00EBD380 /* AuthorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorInfoView.swift; sourceTree = "<group>"; };
 		9906902E2A75790000EBD380 /* RestaurantStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantStore.swift; sourceTree = "<group>"; };
+		992A702F2A777DD400E53A46 /* WelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageView.swift; sourceTree = "<group>"; };
 		995F6E992A72493D0039C69A /* POVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POVView.swift; sourceTree = "<group>"; };
 		995F6E9B2A724A410039C69A /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
 		995F6E9D2A724AD60039C69A /* ContactInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = "<group>"; };
 		995F6E9F2A72CF480039C69A /* OpeningHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
 		995F6EA12A72D2F40039C69A /* MappingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingView.swift; sourceTree = "<group>"; };
 		995F6EA32A72D3F90039C69A /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
-		995F6EA52A72DDFC0039C69A /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		995F6EAB2A7407870039C69A /* NavigationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemView.swift; sourceTree = "<group>"; };
 		995F6EAD2A74119D0039C69A /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		997B17092A6FE362004BF625 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -152,8 +152,9 @@
 		9926E7C22A7024E300C3EAEC /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				997B170B2A6FFF31004BF625 /* MainView.swift */,
 				9906902A2A75134D00EBD380 /* FrontPageView.swift */,
+				997B170B2A6FFF31004BF625 /* MainView.swift */,
+				992A702F2A777DD400E53A46 /* WelcomePageView.swift */,
 				645BA07D2A737BB6001CCD46 /* FeatureVIew.swift */,
 				990690282A74FCA400EBD380 /* SwitchButtonView.swift */,
 				9906902C2A75600F00EBD380 /* AuthorInfoView.swift */,
@@ -250,7 +251,6 @@
 				99E44F3E2A6E79DC00CD0DF7 /* Restaurant.swift */,
 				9906902E2A75790000EBD380 /* RestaurantStore.swift */,
 				997B17092A6FE362004BF625 /* Theme.swift */,
-				995F6EA52A72DDFC0039C69A /* LocationViewModel.swift */,
 				645BA0862A7381C5001CCD46 /* SearchBarViewStyle.swift */,
 				990690212A74E1C300EBD380 /* Location.swift */,
 				990690262A74F0EE00EBD380 /* ToggleButtonStyle.swift */,
@@ -409,10 +409,10 @@
 				99E44F3D2A6E76CF00CD0DF7 /* ItemRowView.swift in Sources */,
 				99E44F0F2A6E5B8C00CD0DF7 /* A1App.swift in Sources */,
 				995F6EA02A72CF480039C69A /* OpeningHours.swift in Sources */,
+				992A70302A777DD400E53A46 /* WelcomePageView.swift in Sources */,
 				995F6E9A2A72493D0039C69A /* POVView.swift in Sources */,
 				995F6EAE2A74119D0039C69A /* FilterView.swift in Sources */,
 				990690292A74FCA400EBD380 /* SwitchButtonView.swift in Sources */,
-				995F6EA62A72DDFD0039C69A /* LocationViewModel.swift in Sources */,
 				995F6EA42A72D3F90039C69A /* ImageSliderView.swift in Sources */,
 				9906902B2A75134D00EBD380 /* FrontPageView.swift in Sources */,
 			);
@@ -573,6 +573,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"A1/Preview Content\"";
+				DEVELOPMENT_TEAM = G2W449CRXA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Michelin Guide";
@@ -581,6 +582,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,6 +604,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"A1/Preview Content\"";
+				DEVELOPMENT_TEAM = G2W449CRXA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Michelin Guide";
@@ -610,6 +613,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

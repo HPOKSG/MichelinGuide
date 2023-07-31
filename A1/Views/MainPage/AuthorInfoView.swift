@@ -17,9 +17,12 @@ struct AuthorInfoView: View {
     @State var changeColor = false
     var body: some View {
             RoundedRectangle(cornerRadius: 20)
+            .fill(Color("black"))
             .frame(width: 375,height: 225)
             .overlay{
                 ZStack{
+                    
+
                     Button {
                         close.toggle()
                     } label: {

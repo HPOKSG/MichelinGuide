@@ -15,7 +15,6 @@ import SwiftUI
 struct DetailView: View {
     @Binding var restaurant: Restaurant
     @Binding var theme: Theme
-    @EnvironmentObject var vm: LocationViewModel
     var body: some View {
         ZStack{
             theme.primaryColor
@@ -47,17 +46,12 @@ struct DetailView: View {
                             .font(.title)
                             .bold()
                             .foregroundColor(theme.accentColor)
-                        MappingView()
+                        MappingView(restaurant: $restaurant)
         
                     }
                 }
             }
         }
-        .onAppear{
-            vm.updateMapRegion(newRegion: restaurant.location)
-        }
-       
-        
     }
 }
 
@@ -65,7 +59,6 @@ struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(restaurant: .constant(Restaurant.allRestaurant[0])
                    ,theme: .constant(Theme(isLightTheme: false)))
-        .environmentObject(LocationViewModel())
         
     }
 }

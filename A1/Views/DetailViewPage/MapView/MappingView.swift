@@ -14,16 +14,19 @@ import SwiftUI
 import MapKit
 
 struct MappingView: View {
-    @EnvironmentObject var vm : LocationViewModel
-    
+    @State var deltaValue = 0.004
+    @Binding var restaurant : Restaurant
+    @State var region  = MKCoordinateRegion()
     var body: some View {
         VStack{
-            Map(coordinateRegion: $vm.mapRegion,
-                annotationItems: vm.location, annotationContent: { location in
-                MapAnnotation(coordinate: location.coordinate ){
+            Map(coordinateRegion: $region,
+                annotationItems:[restaurant], annotationContent: { restaurant in
+                MapAnnotation(coordinate: restaurant.location ){
                     Button {
                         withAnimation(.easeOut) {
-                            vm.zoomIn()
+                            deltaValue *= 0.7
+                            setRegion(restaurant.location)
+
                         }
                     } label: {
                         MapPinView()
@@ -35,18 +38,23 @@ struct MappingView: View {
             .frame(width: 375, height: 300)
             
         }
-  
-        
-       
+        .onAppear{
+            setRegion(restaurant.location)
+        }
+
     }
+    private func setRegion(_ coordinate: CLLocationCoordinate2D) {
+           region = MKCoordinateRegion(
+               center: coordinate,
+               span: MKCoordinateSpan(latitudeDelta: deltaValue, longitudeDelta: deltaValue)
+           )
+       }
 }
 
 struct MappingView_Previews: PreviewProvider {
 
     
     static var previews: some View {
-        MappingView()
-            .environmentObject(LocationViewModel())
-            
+        MappingView(restaurant: .constant(Restaurant.allRestaurant[0]))
     }
 }

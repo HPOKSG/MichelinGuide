@@ -58,7 +58,10 @@ struct ItemView: View {
                             .padding(.leading)
                         Spacer()
                         Button(action: {
-                            restaurant.isFavorite = restaurant.isFavorite == true ? false : true
+                            withAnimation {
+                                restaurant.isFavorite = restaurant.isFavorite == true ? false : true
+                            }
+                            
                             
                         }) {
                             Image(systemName:restaurant.isFavorite ?"heart.fill":  "heart")

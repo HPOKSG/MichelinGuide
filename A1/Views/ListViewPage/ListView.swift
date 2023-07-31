@@ -82,7 +82,6 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         ListView(restaurants:.constant(Restaurant.allRestaurant), theme: .constant(Theme(isLightTheme: false)))
-            .environmentObject(LocationViewModel())
     }
 }
 

@@ -19,32 +19,49 @@ class RestaurantStore: ObservableObject{
     static var FILEURL = "data.json"
     
     private static func fileURL() throws ->URL{
-//        try FileManager.default.url(for:.documentDirectory, in: .userDomainMask,appropriateFor: nil,create: false)
-//            .appendingPathComponent("restaurants.data")
         guard let url = Bundle.main.url(forResource: FILEURL, withExtension: nil)else{
             fatalError("Could not find \(FILEURL) in the project!")
         }
         return url
     }
-    func load() async throws{
-        let task = Task <[Restaurant],Error>{
-            let fileURL = try Self.fileURL()
-            guard let data = try? Data(contentsOf: fileURL)else{
-                return []
+//    func load() async throws{
+//        let task = Task <[Restaurant],Error>{
+//            let fileURL = try Self.fileURL()
+//            guard let data = try? Data(contentsOf: fileURL)else{
+//                return []
+//            }
+//            let dailyScrums = try JSONDecoder().decode([Restaurant].self, from: data)
+//            return dailyScrums
+//        }
+//        let restaurants = try await task.value
+//        self.restaurants = restaurants
+//    }
+    func load(){
+        if let file = Bundle.main.url(forResource: RestaurantStore.FILEURL, withExtension: nil){
+            if let data = try? Data(contentsOf: file) {
+                do {
+                    let decoder = JSONDecoder()
+                    let decoded = try decoder.decode([Restaurant].self, from: data)
+                    self.restaurants = decoded
+                } catch let error {
+                    fatalError("Failed to decode JSON: \(error)")
+                }
             }
-            let dailyScrums = try JSONDecoder().decode([Restaurant].self, from: data)
-            return dailyScrums
+        } else {
+            fatalError("Couldn't load \(RestaurantStore.FILEURL) file")
         }
-        let restaurants = try await task.value
-        self.restaurants = restaurants
+    
     }
-    func save(restaurants: [Restaurant]) async throws{
-        let task = Task{
-            let data = try JSONEncoder().encode(restaurants)
-            let outfile = try Self.fileURL()
-            try data.write(to: outfile)
-        }
-        _ = try await task.value
-    }
+
+    
+    
+//    func save(restaurants: [Restaurant]) async throws{
+//        let task = Task{
+//            let data = try JSONEncoder().encode(restaurants)
+//            let outfile = try Self.fileURL()
+//            try data.write(to: outfile)
+//        }
+//        _ = try await task.value
+//    }
     
 }

@@ -53,6 +53,5 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView(restaurants: .constant(Restaurant.allRestaurant))
-            .environmentObject(LocationViewModel())
     }
 }
