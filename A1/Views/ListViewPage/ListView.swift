@@ -42,7 +42,14 @@ struct ListView: View {
                                     }
                                 }
                             }else{
-                                NavigationItemView(restaurant: $restaurant, theme: $theme)
+                                if type != .none{
+                                    if restaurant.type == type{
+                                       NavigationItemView(restaurant: $restaurant, theme: $theme)
+                                    }
+                                    
+                                }else{
+                                    NavigationItemView(restaurant: $restaurant, theme: $theme)
+                                }
                             }
                         }else{
                             if isFavorite{
