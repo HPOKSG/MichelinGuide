@@ -18,6 +18,7 @@ struct ItemRowView: View {
     @Binding var restaurants: [Restaurant]
     @Binding var theme: Theme
 
+    @State var isPresenting = false
 
     var body: some View {
         VStack {

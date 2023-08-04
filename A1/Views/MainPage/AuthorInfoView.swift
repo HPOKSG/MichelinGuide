@@ -18,15 +18,15 @@ struct AuthorInfoView: View {
     var body: some View {
             RoundedRectangle(cornerRadius: 20)
             .fill(Color("black"))
-            .frame(width: 375,height: 225)
+            .frame(width: 375,height: 200)
             .overlay{
                 ZStack{
-                    
-
-                    Button {
-                        close.toggle()
-                    } label: {
-                        VStack {
+                    VStack {
+                        
+                        Button {
+                            close.toggle()
+                        } label: {
+                            
                             HStack{
                                 Spacer()
                                 Image(systemName: "xmark")
@@ -35,18 +35,19 @@ struct AuthorInfoView: View {
                             }
                             Spacer()
                         }
+                        
+                        VStack(spacing: 10){
+                            Text("Author Information")
+                                .font(.title)
+                            Divider()
+                                .background(.white)
+                            Text("Name: Dinh Gia Huu Phuoc")
+                            Text("Student Number: s3878270")
+                            Text("Major: Software Engineering")
+                                .padding(.bottom)
+                        }
+                        .foregroundColor(.white)
                     }
-                    VStack(spacing: 10){
-                        Text("Author Information")
-                            .font(.title)
-                        Divider()
-                            .background(.white)
-                        Text("Name: Dinh Gia Huu Phuoc")
-                        Text("Student Number: s3878270")
-                        Text("Major: Software Engineering")
-                            .padding(.bottom)
-                    }
-                    .foregroundColor(.white)
                 }
             }
     }
