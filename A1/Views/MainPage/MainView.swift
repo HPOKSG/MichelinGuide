@@ -46,6 +46,7 @@ struct MainView: View {
                 }
             }
         }
+        .preferredColorScheme(theme.isLightTheme ? .light: .dark)
     }
 }
 

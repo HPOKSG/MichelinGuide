@@ -20,6 +20,7 @@ struct FrontPageView: View {
             WelcomePageView(isPresenting: $isPresenting)
         }else{
             MainView(restaurants: $restaurants)
+                
         }
     }
 }
