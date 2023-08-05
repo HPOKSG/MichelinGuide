@@ -13,6 +13,8 @@
 import SwiftUI
 
 struct MapPinView: View {
+    
+    //use vstack to make the pin view
     var body: some View {
         VStack{
             Image(systemName: "map.circle")
@@ -27,7 +29,6 @@ struct MapPinView: View {
                 .foregroundColor(.red)
                 .rotationEffect(Angle(degrees: 180))
                 .offset(y:-10)
-//                .padding(.bottom, 50)
         }
     }
 }

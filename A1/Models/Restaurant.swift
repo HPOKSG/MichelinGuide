@@ -1,20 +1,21 @@
 /*
-  RMIT University Vietnam
-  Course: COSC2659 iOS Development
-  Semester: 2023B
-  Assessment: Assignment 1
-  Author: Dinh Gia Huu Phuoc
-  ID: s3878270
-  Created  date: 25/07/2023
-  Last modified: 02/08/2023
-  Acknowledgement: COSC2659 Lecture Slides, Apple IOS Development Tutorial
-*/
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2023B
+ Assessment: Assignment 1
+ Author: Dinh Gia Huu Phuoc
+ ID: s3878270
+ Created  date: 25/07/2023
+ Last modified: 02/08/2023
+ Acknowledgement: COSC2659 Lecture Slides, Apple IOS Development Tutorial
+ */
 import Foundation
 import MapKit
 import CoreLocation
 import SwiftUI
 
 struct Restaurant: Codable,Hashable, Identifiable{
+    //declare variables
     var id: Int
     var name: String
     var distinction : String
@@ -29,13 +30,27 @@ struct Restaurant: Codable,Hashable, Identifiable{
     var priceRange: String
     var schedule: [String]
     var images: [String]
+    
+    //declare enum to identify the cateogry of the restaurant
+    enum Filter: String, CaseIterable, Encodable, Equatable{
+        case none
+        case recommend = "Recommend"
+        case bib = "Bib Gourmand"
+        case oneStart = "1 star"
+        
+    }
+    
+    
+    //convert to the location from lat and long
     var location: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: Double(latitude)!, longitude: Double(longtitude)!)
     }
+    
     var imageConverter: [Image]{
         images.map{Image($0)}
     }
     
+    // set the proper icon image according to the category of the restaurant
     var icon: Image?{
         if distinction == "1 star"{
             return Image( "star")
@@ -44,6 +59,7 @@ struct Restaurant: Codable,Hashable, Identifiable{
         }
         return nil
     }
+    
     var openingHour: [String: String]?{
         if schedule.count == 0{
             return nil
@@ -52,14 +68,6 @@ struct Restaurant: Codable,Hashable, Identifiable{
     }
     
     static let allRestaurant: [Restaurant] = Bundle.main.decode(file: "data.json")
-    
-    enum Filter: String, CaseIterable, Encodable, Equatable{
-        case none
-        case recommend = "Recommend"
-        case bib = "Bib Gourmand"
-        case oneStart = "1 star"
-           
-    }
     
     var type: Filter{
         for type in Filter.allCases{

@@ -1,27 +1,31 @@
 /*
-  RMIT University Vietnam
-  Course: COSC2659 iOS Development
-  Semester: 2023B
-  Assessment: Assignment 1
-  Author: Dinh Gia Huu Phuoc
-  ID: s3878270
-  Created  date: 25/07/2023
-  Last modified: 02/08/2023
-  Acknowledgement: COSC2659 Lecture Slides, Apple IOS Development Tutorial
-*/
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2023B
+ Assessment: Assignment 1
+ Author: Dinh Gia Huu Phuoc
+ ID: s3878270
+ Created  date: 25/07/2023
+ Last modified: 02/08/2023
+ Acknowledgement: COSC2659 Lecture Slides, Apple IOS Development Tutorial
+ */
 import SwiftUI
 
 struct ItemRowView: View {
+    
+    //declare the variables
     let title: String
     let symbol: String
     let type : Restaurant.Filter
     @Binding var restaurants: [Restaurant]
     @Binding var theme: Theme
-
     @State var isPresenting = false
-
+    
     var body: some View {
+        
         VStack {
+            
+            //make the heading for the row
             HStack{
                 Text(title)
                     .foregroundColor(theme.accentColor)
@@ -32,6 +36,8 @@ struct ItemRowView: View {
             }
             .frame(maxWidth: .infinity,alignment: .leading)
             .padding(.horizontal)
+            
+            //create the list view of the restaurants of according category
             ScrollView(.horizontal,showsIndicators: false) {
                 HStack{
                     ForEach($restaurants,id: \.self) { $restaurant in
@@ -54,6 +60,6 @@ struct ItemRowView: View {
 struct ItemRowView_Previews: PreviewProvider {
     static var previews: some View {
         ItemRowView(title: "1 Star Michelin", symbol: "star",type: .oneStart, restaurants: .constant(Restaurant.allRestaurant),theme: .constant(Theme(isLightTheme: true)))
-           
+        
     }
 }

@@ -1,26 +1,30 @@
 /*
-  RMIT University Vietnam
-  Course: COSC2659 iOS Development
-  Semester: 2023B
-  Assessment: Assignment 1
-  Author: Dinh Gia Huu Phuoc
-  ID: s3878270
-  Created  date: 25/07/2023
-  Last modified: 02/08/2023
-  Acknowledgement: COSC2659 Lecture Slides, Apple IOS Development Tutorial
-*/
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2023B
+ Assessment: Assignment 1
+ Author: Dinh Gia Huu Phuoc
+ ID: s3878270
+ Created  date: 25/07/2023
+ Last modified: 02/08/2023
+ Acknowledgement: COSC2659 Lecture Slides, Apple IOS Development Tutorial
+ */
 
 import SwiftUI
 
 struct POVView: View {
+    
+    //declare the variable
     @Binding var restaurant: Restaurant
     @Binding var theme: Theme
-   
     var body: some View {
+        
+        //use vstack to contain the set of information
         VStack{
             Text("MICHELIN Guide’s Point Of View")
                 .frame(maxWidth:.infinity,alignment: .leading)
                 .font(.system(size:20))
+            
             HStack{
                 Image("star")
                     .resizable()
@@ -30,12 +34,11 @@ struct POVView: View {
             }
             .font(.system(size: 16))
             .frame(maxWidth: .infinity,alignment:.leading)
-           
-
+            
             Text(restaurant.introduction)
                 .font(.system(size: 14))
                 .padding(.top)
-               
+            
         }
         .foregroundColor(theme.accentColor)
         .bold()

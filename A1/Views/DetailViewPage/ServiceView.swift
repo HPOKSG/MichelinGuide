@@ -1,24 +1,27 @@
 /*
-  RMIT University Vietnam
-  Course: COSC2659 iOS Development
-  Semester: 2023B
-  Assessment: Assignment 1
-  Author: Dinh Gia Huu Phuoc
-  ID: s3878270
-  Created  date: 25/07/2023
-  Last modified: 02/08/2023
-  Acknowledgement: COSC2659 Lecture Slides, Apple IOS Development Tutorial
-*/
+ RMIT University Vietnam
+ Course: COSC2659 iOS Development
+ Semester: 2023B
+ Assessment: Assignment 1
+ Author: Dinh Gia Huu Phuoc
+ ID: s3878270
+ Created  date: 25/07/2023
+ Last modified: 02/08/2023
+ Acknowledgement: COSC2659 Lecture Slides, Apple IOS Development Tutorial
+ */
 
 import SwiftUI
 
 struct ServiceView: View {
     @Binding var theme: Theme
     var body: some View {
+        
+        //use vstack to create the list of text info
         VStack{
             Text("Facilities & Services")
                 .frame(maxWidth:.infinity,alignment: .leading)
                 .font(.system(size:20))
+            
             VStack(spacing: 10){
                 Label("Air Condition", systemImage: "air.conditioner.horizontal")
                     .frame(maxWidth: .infinity,alignment:.leading)
@@ -33,7 +36,7 @@ struct ServiceView: View {
             }
             .padding(.top)
             .frame(maxWidth: .infinity,alignment:.leading)
-               
+            
         }
         .foregroundColor(theme.accentColor)
         .bold()

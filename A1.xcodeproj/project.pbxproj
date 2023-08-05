@@ -10,7 +10,6 @@
 		645BA07E2A737BB6001CCD46 /* FeatureVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA07D2A737BB6001CCD46 /* FeatureVIew.swift */; };
 		645BA0802A737D13001CCD46 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA07F2A737D13001CCD46 /* ListView.swift */; };
 		645BA0872A7381C5001CCD46 /* SearchBarViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645BA0862A7381C5001CCD46 /* SearchBarViewStyle.swift */; };
-		990690222A74E1C300EBD380 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990690212A74E1C300EBD380 /* Location.swift */; };
 		990690252A74E8ED00EBD380 /* MapPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990690242A74E8ED00EBD380 /* MapPinView.swift */; };
 		990690272A74F0EE00EBD380 /* ToggleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990690262A74F0EE00EBD380 /* ToggleButtonStyle.swift */; };
 		990690292A74FCA400EBD380 /* SwitchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990690282A74FCA400EBD380 /* SwitchButtonView.swift */; };
@@ -62,7 +61,6 @@
 		645BA07D2A737BB6001CCD46 /* FeatureVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureVIew.swift; sourceTree = "<group>"; };
 		645BA07F2A737D13001CCD46 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		645BA0862A7381C5001CCD46 /* SearchBarViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewStyle.swift; sourceTree = "<group>"; };
-		990690212A74E1C300EBD380 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		990690242A74E8ED00EBD380 /* MapPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPinView.swift; sourceTree = "<group>"; };
 		990690262A74F0EE00EBD380 /* ToggleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButtonStyle.swift; sourceTree = "<group>"; };
 		990690282A74FCA400EBD380 /* SwitchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButtonView.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 				9906902E2A75790000EBD380 /* RestaurantStore.swift */,
 				997B17092A6FE362004BF625 /* Theme.swift */,
 				645BA0862A7381C5001CCD46 /* SearchBarViewStyle.swift */,
-				990690212A74E1C300EBD380 /* Location.swift */,
 				990690262A74F0EE00EBD380 /* ToggleButtonStyle.swift */,
 			);
 			path = Models;
@@ -391,7 +388,6 @@
 			files = (
 				995F6E9E2A724AD60039C69A /* ContactInformation.swift in Sources */,
 				995F6E9C2A724A410039C69A /* ServiceView.swift in Sources */,
-				990690222A74E1C300EBD380 /* Location.swift in Sources */,
 				990690272A74F0EE00EBD380 /* ToggleButtonStyle.swift in Sources */,
 				990690252A74E8ED00EBD380 /* MapPinView.swift in Sources */,
 				99E44F3F2A6E79DC00CD0DF7 /* Restaurant.swift in Sources */,

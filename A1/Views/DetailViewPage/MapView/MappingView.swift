@@ -14,10 +14,15 @@ import SwiftUI
 import MapKit
 
 struct MappingView: View {
+    
+    //declare all variables
     @State var deltaValue = 0.004
     @Binding var restaurant : Restaurant
     @State var region  = MKCoordinateRegion()
+    
     var body: some View {
+        
+        //use vstack to contain the map view
         VStack{
             Map(coordinateRegion: $region,
                 annotationItems:[restaurant], annotationContent: { restaurant in
@@ -39,6 +44,7 @@ struct MappingView: View {
             
         }
         .onAppear{
+            //set the region of the select restaurant on first appear
             setRegion(restaurant.location)
         }
 
