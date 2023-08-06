@@ -25,40 +25,38 @@ struct AuthorInfoView: View {
             .frame(width: 375,height: 200)
             .overlay{
                 //main body info
-//                ZStack{
-                    VStack {
-                        //this button is used to close the view
-                        Button {
-                            withAnimation {
-                                close.toggle()
-                            }
-                            
-                        } label: {
-                            //format the closed button
-                            HStack{
-                                Spacer()
-                                Image(systemName: "xmark")
-                                    .padding([.top,.trailing])
-                                    .foregroundColor(changeColor ? .black:.white)
-                            }
-                            Spacer()
+                VStack {
+                    //this button is used to close the view
+                    Button {
+                        withAnimation {
+                            close.toggle()
                         }
                         
-                        //display the author information
-                        VStack(spacing: 10){
-                            Text("Author Information")
-                                .font(.title)
-                            Divider()
-                                .background(.white)
-                            Text("Name: Dinh Gia Huu Phuoc")
-                            Text("Student Number: s3878270")
-                            Text("Major: Software Engineering")
-                                .padding(.bottom)
+                    } label: {
+                        //format the closed button
+                        HStack{
+                            Spacer()
+                            Image(systemName: "xmark")
+                                .padding([.top,.trailing])
+                                .foregroundColor(changeColor ? .black:.white)
                         }
-                        .foregroundColor(.white)
+                        Spacer()
                     }
+                    
+                    //display the author information
+                    VStack(spacing: 10){
+                        Text("Author Information")
+                            .font(.title)
+                        Divider()
+                            .background(.white)
+                        Text("Name: Dinh Gia Huu Phuoc")
+                        Text("Student Number: s3878270")
+                        Text("Major: Software Engineering")
+                            .padding(.bottom)
+                    }
+                    .foregroundColor(.white)
                 }
-//            }
+            }
     }
 }
 
