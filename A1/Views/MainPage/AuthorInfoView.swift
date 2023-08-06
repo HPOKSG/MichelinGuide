@@ -25,11 +25,14 @@ struct AuthorInfoView: View {
             .frame(width: 375,height: 200)
             .overlay{
                 //main body info
-                ZStack{
+//                ZStack{
                     VStack {
                         //this button is used to close the view
                         Button {
-                            close.toggle()
+                            withAnimation {
+                                close.toggle()
+                            }
+                            
                         } label: {
                             //format the closed button
                             HStack{
@@ -55,7 +58,7 @@ struct AuthorInfoView: View {
                         .foregroundColor(.white)
                     }
                 }
-            }
+//            }
     }
 }
 
